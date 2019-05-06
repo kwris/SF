@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Survey Form</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Description" content="Survey Form, 
+informations, personal data, opinions">
+<link rel="shortcut icon" href="Charts.png">
+<meta name="theme-color" content="#40bf80"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" 
+integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" 
+crossorigin="anonymous">
+<script src="https://www.google.com/recaptcha/api.js?render=6LcA36EUAAAAALmDmk4vw1-gJbONs4_xtrmfqNQE"></script>
+ <script>
+  grecaptcha.ready(function() {
+      grecaptcha.execute('6LcA36EUAAAAALmDmk4vw1-gJbONs4_xtrmfqNQE', {action: 'homepage'}).then(function(token) {
+         ...
+      });
+  });
+</script>
+<script>
+   function lettersOnly(input)
+   {
+   var regex = /[^a-z]/g;
+   input.value = input.value.replace(regex, "");
+   }
+</script>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+body {
+background-color:#f4f4f4;
+font-family: 'Roboto Condensed', sans-serif;
+}
+
+#main {
+  background-color: #ccccb3;
+  margin: 0 auto;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 900px;
+  padding-top: 40px;
+}
+.row{
+background-color:#9fdfbe;
+border-radius: 8px;
+padding: 5px 5px 5px 5px;
+font-size: 18px;
+} 
+.column {
+margin-top: 10px;
+padding: 5px 5px 5px 15px;
+display: inline-block;
+font-size: 18px;
+}
+h1 {color:#4775d1;}
+p, h1 {
+text-align: center;
+}
+h1 {font-size: 40px;}
+p {font-size: 25px;}
+.dropdown {background-color:#ffe5cc;}
+#opt {line-height: 20px;}
+#submit {
+  background-color: #009900;
+  border-radius: 6px;
+  color: white;
+  font-size: 1.5em;
+  height: 50px;
+  width: 150px;
+  border: 0px solid;
+  margin: 0 auto;
+  display: block;
+}
+
+
+#comments {
+ border: 2px solid;
+  padding: 30px; 
+  width: 300px;
+  resize: both;
+  overflow: auto;
+}  
+.userChoice {
+float:left;
+} 
+/*footer {
+margin-top: 5px;
+text-align: center;
+}*/
+.irow {
+padding: 8px 0px 5px 8px;
+font-size: 18px;
+}
+.incolumn {
+padding: 4px 4px 4px 4px;
+font-size: 18px;
+}
+.row-cont {
+margin-top: -40px;
+background-color:#9fdfbe;
+border-radius: 8px;
+padding: 5px 5px 5px 5px;
+font-size: 18px;
+}
+.input-field {
+  height: 20px;
+  width: 280px;
+  padding: 7px 7px 7px 7px;
+ }
+h4 { 
+padding: 1px 1px 1px 1px;
+font-size: 15px;
+}
+#currentPos {
+padding: 7px 7px 7px 7px;
+}
+/*7px 7px 7px 7px;*/
+.radio_lab {
+border-bottom: 2px ridge black;
+}
+@media (max-width: 400px) {
+  #main {
+    width: 100%;
+  }
+}  
+</style>
+</head>
+<body>
+<h1 id="title">Survey Form</h1>
+
+<p id="description">
+    Do you want to visit Europe?
+  </p>
+  <div id="main">
+<!-- SURVEY-FORM -->  
+<form id="survey-form" method="POST" action="zapis.php">
+<!-- INPUTS -->
+<div class="container">
+      <div class="row-cont">
+        * Personal details: <i class='far fa-hand-point-left' style='font-size:35px;color:green;float:right'></i>
+      </div>
+	  <div class="irow">
+        <label id="name-label" for="name">* Name: </label>
+		<div class="incolumn">
+		 <input autofocus type="text" name="name" id="name" class="input-field" placeholder="Enter your name" required onkeyup="lettersOnly(this)">
+      </div>
+	  </div>
+<div class="irow">
+        <label id="email-label" class="fold" for="email">* Email: </label>
+		<div class="incolumn">
+		<input type="email" name="email" id="email" class="input-field" placeholder="Enter your Email" required>
+	  </div>
+       </div>	
+    <div class="irow">
+        <label id="number-label" class="fold" for="age">* Age: </label>
+		<div class="incolumn">
+		<input type="number" name="age" id="age" min="1" max="125" class="input-field" placeholder="Age" required>
+      </div> 
+	  </div>
+</div>
+<hr>
+<!-- OPTION-VALUE DROPDOWN -->
+<div class="container">
+     <div class="row">
+        <label for="currentPos">Which area of Europe you want to visit? <i class='fas fa-clipboard' style='font-size:35px;color:blue;float:right'></i>  </label>
+      </div>
+	  <div class="column">
+        <select id="currentPos" name="currentPos" class="dropdown">
+      <option disabled selected value>Select an option</option>
+      <option value="north">North</option>
+     <option value="south">South</option>
+      <option value="east">East</option>
+      <option value="west">West</option> 
+        </select>
+      </div>
+</div> 
+<hr>
+<!-- RADIO-BUTTONS -->
+<div class="container">
+      <div class="row">
+        <label for="userChoice">* Do you want to travel to Europe in near future? <i class='fas fa-edit' style='font-size:35px;color:#ff8c1a;float:right'></i></label>
+      </div>
+	<div class="column">
+       <ul style="list-style: none;" >
+          <li class="radio_lab"><label>Definitely<input name="radio-buttons" value="val1"  type="radio" class="userChoice" required></label></li>
+          <li class="radio_lab"><label>Maybe<input name="radio-buttons" value="val2"  type="radio" class="userChoice" required></label></li>
+          <li class="radio_lab"><label>Not sure<input name="radio-buttons" value="val3"  type="radio" class="userChoice" required></label></li> 
+        </ul>
+     </div>
+</div> 
+<hr>
+<!-- CHECKBOX -->
+<div class="container">
+      <div class="row">
+        <label for="prefer" id="opt">Things that you want to do in Europe<br>(Check all that apply): <i class='fas fa-file-upload' style='font-size:35px;color:#b3b300;float:right'></i></label>
+      </div>
+	  <div class="column">
+        <ul id="preferences" style="list-style: none;">
+          <li class="checkbox"><label><input name="prefer" value="1" type="checkbox" class="userRatings">Tourist travel</label></li>
+          <li class="checkbox"><input name="prefer" value="2" type="checkbox" class="userRatings">Work</li>
+          <li class="checkbox"><label><input name="prefer" value="3" type="checkbox" class="userRatings">Visit a family</label></li>
+          <li class="checkbox"><label><input name="prefer" value="4" type="checkbox" class="userRatings"></label>Open bussines</li>
+          <li class="checkbox"><label><input name="prefer" value="5" type="checkbox" class="userRatings">Shopping</label></li>
+          <li class="checkbox"><label><input name="prefer" value="6" type="checkbox" class="userRatings">Learning language</label></li> 
+          <li class="checkbox"><label><input name="prefer" value="7" type="checkbox" class="userRatings">Sightseeing</label></li>
+        </ul>
+      </div>
+</div> 
+<hr>
+<!-- TEXT-AREA -->
+<div class="container">
+    <div class="row">
+        <label for="comments">Any Comments or Suggestions? <i class='fas fa-marker' style='font-size:35px;color:#ff80d5;float:right'></i></label>
+     </div>
+	 <div class="column">
+        <textarea id="comments" name="comment" maxlength="200" placeholder="Enter your comment here..."></textarea>
+     </div>
+</div>
+<hr>
+<!-- BUTTON  -->
+<button id="submit" type="submit" style="text-align:center;">Submit</button>
+<h4><i class="fa fa-copyright" style="font-size:15px"></i> 2019</h4>
+</form>
+</div>
+<!-- FOOTER  -->
+<!-- <footer>* Required </footer> -->
+</body>
+</html>
