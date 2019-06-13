@@ -85,4 +85,7 @@ border-bottom: 2px ridge black;
   #main {
     width: 100%;
   }
+  .input-field {
+  max-width: 50%;
+  }
 }  
