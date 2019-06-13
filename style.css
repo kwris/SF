@@ -22,7 +22,7 @@ padding: 5px 5px 5px 15px;
 display: inline-block;
 font-size: 18px;
 }
-h1 {color:#666633;}
+h1 {color:#666633;  text-shadow: 2px 2px white;}
 p, h1 {
 text-align: center;
 }
@@ -74,6 +74,7 @@ font-size: 18px;
 h4 { 
 padding: 1px 1px 1px 1px;
 font-size: 15px;
+color: white; 
 }
 #currentPos {
 padding: 7px 7px 7px 7px;
@@ -86,6 +87,10 @@ border-bottom: 2px ridge black;
     width: 100%;
   }
   .input-field {
-  max-width: 50%;
+  max-width: 75%;
+  }
+  #comments {
+  max-width: 75%;
+  max-height: 75%;
   }
 }  
