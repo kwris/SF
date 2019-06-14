@@ -23,10 +23,11 @@ crossorigin="anonymous">
 <script>
    function lettersOnly(input)
    {
-   var regex = /^[a-z\sA-Z]/g;
+   var regex = /[a-z\sA-Z]/g;
    input.value = input.value.replace(regex, "");
    }
 </script>
+	<!-- ^ -->
 </head>
 <body>
 <h1 id="title">Survey Form</h1>
