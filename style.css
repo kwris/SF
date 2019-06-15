@@ -22,7 +22,7 @@ padding: 5px 5px 5px 15px;
 display: inline-block;
 font-size: 18px;
 }
-h1 {color:#339966; /* text-shadow: 2px 2px #ffff99;*/}
+h1 {color:#00e600; /* text-shadow: 2px 2px #ffff99;*/}
 p, h1 {
 text-align: center;
 }
@@ -74,7 +74,7 @@ font-size: 18px;
 h4 { 
 padding: 1px 1px 1px 1px;
 font-size: 15px;
-color: #7a7a52; 
+color: #993300; 
 }
 #currentPos {
 padding: 7px 7px 7px 7px;
