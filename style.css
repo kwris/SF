@@ -22,11 +22,8 @@ padding: 5px 5px 5px 15px;
 display: inline-block;
 font-size: 18px;
 }
-h1 {color:#00e600; /* text-shadow: 2px 2px #ffff99;*/}
-p, h1 {
-text-align: center;
-}
-h1 {font-size: 40px;}
+h1 {color:#336600;font-size: 40px;}
+p, h1 {text-align: center;}
 p {font-size: 25px;}
 .dropdown {background-color:#ffe5cc;}
 #opt {line-height: 20px;}
